@@ -1,8 +1,9 @@
 streamlit==1.45.1
-streamlit-webrtc==0.62.4
 elevenlabs==2.3.0
 python-dotenv==1.1.0
-twilio==9.6.3
 SpeechRecognition==3.14.3
-webrtcvad-wheels==2.0.14
-streamlit-realtime-audio-recorder==0.1.2
+pydub==0.25.1
+soundfile==0.13.1
+faster-whisper==1.1.1
+groq==0.28.0
+gTTS==2.5.1

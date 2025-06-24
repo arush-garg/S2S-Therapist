@@ -11,7 +11,7 @@ class AudioProcessor:
         self.recognizer = sr.Recognizer()
         
         # Warm up recognize_faster_whisper to load models at instantiation
-        silence = AudioSegment.silent(duration=100)
+        silence = AudioSegment.silent(duration=10)
         with io.BytesIO() as buf:
             silence.export(buf, format="webm")
             buf.seek(0)
