@@ -23,4 +23,4 @@ There are two options for the Text-to-Speech service used by the application.
 |---|---|
 |Better quality and more human-like audio|Sounds little robotic and makes some mistakes with emphasis|
 |User needs to provide an [API key](https://elevenlabs.io/app/settings/api-keys) (since the service is quite expensive)|Free|
-|Extensive collection of voices to choose from|No choice of language|
+|Extensive collection of voices to choose from|No choice of voice|

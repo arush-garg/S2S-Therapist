@@ -8,6 +8,8 @@ from audio_recorder import audio_recorder
 from audio_processor import *
 from autoplay_audio_component import autoplay_audio_component
 from gtts import gTTS
+from dotenv import load_dotenv
+from groq import Groq
 
 
 RESPONSE_PATH = "response.mp3"
@@ -59,6 +61,19 @@ def transcribe_and_respond(audio_data: str):
         st.warning("Could not understand audio")
 
 
+if 'groq_client' not in st.session_state:
+    try:
+        load_dotenv()
+        st.session_state.groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+    except:
+        st.session_state.groq_client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+
+if 'message_history' not in st.session_state:
+    st.session_state.message_history = [{"role": "system", "content": llm_util.SYSTEM_PROMPT}]
+
+if 'processor' not in st.session_state:
+    st.session_state.processor = AudioProcessor()
+
 # Streamlit UI
 st.title("Conversational Therapist")
 
@@ -84,12 +99,6 @@ else:
     if 'client' in st.session_state:
         del st.session_state['client']
 
-
-if 'processor' not in st.session_state:
-    st.session_state.processor = AudioProcessor()
-
-
-audio_placeholder = st.empty()
 
 # Disable recorder if ElevenLabs is selected but no API key is provided
 if st.session_state.tts_provider == 'ElevenLabs' and 'client' not in st.session_state:

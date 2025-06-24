@@ -14,16 +14,6 @@ You should not use any code blocks, and you should not use any special character
 """
 
 
-if 'groq_client' not in st.session_state:
-    try:
-        load_dotenv()
-        st.session_state.groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-    except:
-        st.session_state.groq_client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-if 'message_history' not in st.session_state:
-    st.session_state.message_history = [{"role": "system", "content": SYSTEM_PROMPT}]
-
-
 def get_response(prompt, t=0.5):
     st.session_state.message_history.append({"role": "user", "content": prompt})
     
