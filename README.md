@@ -1,26 +1,33 @@
 # Speech-to-Speech Therapist
 
-The purpose of this tool is to democratize access to personalized mental health resources. The main difference between this implementation and a chatbot is the conversational aspect. Some people find it difficult to type their feelings, hence a speech-based AI therapist may provide significantly more comfort.
+This tool aims to democratize access to personalized mental health resources. Unlike traditional chatbots, this application focuses on a conversational, speech-based experience. For many, speaking is more comfortable than typing, making a speech-driven AI therapist more accessible and comforting.
 
-### Set up
+### Setup
 
-1. Create a `.env` file and add your `GROQ_API_KEY`
-
-2. Install dependencies using `pip install -r requirements.txt`
-3. Install `ffmpeg` if not already installed. You can use `brew install ffmpeg` on macOS or download it from the [FFmpeg website](https://ffmpeg.org/download.html) for other platforms.
+1. Create a `.env` file and add your `GROQ_API_KEY`.
+2. Install dependencies: `pip install -r requirements.txt`
+3. Ensure `ffmpeg` is installed. On macOS, use `brew install ffmpeg`. For other platforms, download it from the [FFmpeg website](https://ffmpeg.org/download.html).
 
 ### Running the App
 
-Run `streamlit run app.py` and the page should open in the browser. You might be prompted to give microphone permissions.
+Start the app with:
 
-<i>I strongly recommend using headphones. The microphone sometimes picks up the text-to-speech as user input</i>
+```
+streamlit run app.py
+```
+
+The app should open in your browser. You may be prompted to grant microphone permissions.
+
+You can also try the app online [here](https://s2s-therapist.streamlit.app/).
+
+*Tip: For best results, use headphones. The microphone may pick up the text-to-speech output as user input.*
 
 ### Choosing the TTS Model
 
-There are two options for the Text-to-Speech service used by the application.
+There are two Text-to-Speech (TTS) options available:
 
-|ElevenLabs|GTTS|
+| ElevenLabs | GTTS |
 |---|---|
-|Better quality and more human-like audio|Sounds little robotic and makes some mistakes with emphasis|
-|User needs to provide an [API key](https://elevenlabs.io/app/settings/api-keys) (since the service is quite expensive)|Free|
-|Extensive collection of voices to choose from|No choice of voice|
+| High-quality, human-like audio | Slightly robotic, may misplace emphasis |
+| Requires an [API key](https://elevenlabs.io/app/settings/api-keys) (service is paid) | Free |
+| Wide selection of voices | No voice selection |

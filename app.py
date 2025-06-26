@@ -113,4 +113,5 @@ else:
     if result:
         if result.get('status') == 'stopped':
             audio_data = result.get('audioData')
-            transcribe_and_respond(audio_data)
+            with st.spinner("Thinking..."):
+                transcribe_and_respond(audio_data)
