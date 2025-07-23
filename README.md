@@ -18,7 +18,7 @@ streamlit run app.py
 
 The app should open in your browser. You may be prompted to grant microphone permissions.
 
-You can also try the app online [here](https://s2s-therapist.streamlit.app/).
+You can also try the app online [here](https://s2s-therapist.streamlit.app/) (you might need to reload the page if Streamlit gives an error).
 
 *Tip: For best results, use headphones. The microphone may pick up the text-to-speech output as user input.*
 
